@@ -6,7 +6,6 @@ import EventInfo from '../EventInfo/EventInfo';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
-import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
