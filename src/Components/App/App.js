@@ -12,7 +12,7 @@ function App() {
     <div>
       <h1>YUH</h1>
       <Header></Header>
-      
+
       <CreateEvent></CreateEvent>
       <Dashboard></Dashboard>
       <ErrorPage></ErrorPage>
