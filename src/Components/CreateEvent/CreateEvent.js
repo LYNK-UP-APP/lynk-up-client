@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './CreateEvent.css'
+import Map from '../Map/Map';
 
 function CreateEvent() {
 
@@ -37,6 +38,7 @@ function CreateEvent() {
                 value={group}
                 onChange={event => setGroup(event.target.value)}>
             </input>
+            <Map/>
         </section>
     </div>
   )
