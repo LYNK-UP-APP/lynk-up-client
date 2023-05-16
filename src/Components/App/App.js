@@ -6,6 +6,7 @@ import EventInfo from '../EventInfo/EventInfo';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
+import { Route } from 'react-router-dom'
 
 function App() {
   return (
@@ -13,12 +14,12 @@ function App() {
       <h1>YUH</h1>
       <Header></Header>
 
-      <CreateEvent></CreateEvent>
-      <Dashboard></Dashboard>
-      <ErrorPage></ErrorPage>
+      {/* <CreateEvent></CreateEvent> */}
+      <Route exact path="/" render={() => <Dashboard />} />
+      {/* <ErrorPage></ErrorPage>
       <EventInfo></EventInfo>
       <FriendsPage></FriendsPage>
-      <GroupPage></GroupPage>
+      <GroupPage></GroupPage> */}
     </div>
   );
 }
