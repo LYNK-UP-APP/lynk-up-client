@@ -1,0 +1,16 @@
+.card {
+    height: var(--section-height);
+    width: var(--section-width);
+    background-color: var(--secondary-color-black);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.long-tile {
+    width: 50vw;
+    height: 5vh;
+    text-align: center;
+    background-color: white;
+}
