@@ -25,9 +25,9 @@ function App() {
             // render EventInfo with info from fetch passed through
             <EventInfo />
           }}/>
-
-          <Route exact path='/404'><ErrorPage/></Route>
-          <Route path='*'><Redirect to='/404'/></Route>
+          <Route path="/"><Redirect to="/dashboard"/></Route>
+          <Route exact path="/404"><ErrorPage/></Route>
+          <Route path="*"><Redirect to="/404"/></Route>
         </Switch>
       </main>
     </>
