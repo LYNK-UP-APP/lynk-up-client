@@ -19,12 +19,7 @@ function App() {
           <Route exact path="/groups" render={() => <GroupPage/>}/>
           <Route exact path="/friends" render={() => <FriendsPage/>}/>
           <Route exact path="/new-event" render={() => <CreateEvent/>}/>
-          <Route exact path="/event/:id" render={({ match }) => {
-            const id = match.params;
-            // send a request for the event based on the ID
-            // render EventInfo with info from fetch passed through
-            <EventInfo />
-          }}/>
+          <Route exact path="/event/:id" render={() => <EventInfo/>}/>
           <Route path="/"><Redirect to="/dashboard"/></Route>
           <Route exact path="/404"><ErrorPage/></Route>
           <Route path="*"><Redirect to="/404"/></Route>

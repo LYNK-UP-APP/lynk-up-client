@@ -1,0 +1,33 @@
+.event-card {
+  background-color: var(--secondary-color-white);
+  height: var(--section-height);
+  min-height: var(--section-min-height);
+  width: var(--section-width);
+  min-width: var(--section-min-width);
+  padding: 2vmin;
+  text-align: center;
+}
+
+.info-section {
+  border: 1px solid blue;
+  height: 95%;
+  display: flex;
+}
+
+.event-info-left, .event-info-right {
+  border: 1px solid black;
+  height: 100%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.map-section {
+  height: 50%;
+  border: 1px solid black;
+  width: 90%;
+  align-items: center;
+  font-size: 15em;
+}

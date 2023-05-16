@@ -8,6 +8,12 @@
   --secondary-color-white: #EEEDDE;
   --secondary-color-blue: #2EB086;
   --border-rad: 3px;
+
+  --gap-from-header: 5vh;
+  --section-height: 80vh;
+  --section-min-height: 75vh;
+  --section-width: 70vw;
+  --section-min-width: 60vw;
 }
 
 * {
