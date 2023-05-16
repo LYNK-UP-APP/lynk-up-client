@@ -1,9 +1,13 @@
 import React from 'react'
+import './Header.css';
 
 function Header() {
+
   return (
-    <div>Header</div>
-  )
+    <header>
+      <h1>HEADER</h1>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

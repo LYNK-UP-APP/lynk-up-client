@@ -9,17 +9,17 @@ import Header from '../Header/Header';
 
 function App() {
   return (
-    <div>
-      <h1>YUH</h1>
-      <Header></Header>
-
-      <CreateEvent></CreateEvent>
-      <Dashboard></Dashboard>
-      <ErrorPage></ErrorPage>
-      <EventInfo></EventInfo>
-      <FriendsPage></FriendsPage>
-      <GroupPage></GroupPage>
-    </div>
+    <>
+      <Header />
+      <main>
+        <CreateEvent></CreateEvent>
+        <Dashboard></Dashboard>
+        <ErrorPage></ErrorPage>
+        <EventInfo></EventInfo>
+        <FriendsPage></FriendsPage>
+        <GroupPage></GroupPage>
+      </main>
+    </>
   );
 }
 
