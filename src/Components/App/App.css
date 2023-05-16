@@ -1,3 +1,5 @@
 main {
   margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
 }
