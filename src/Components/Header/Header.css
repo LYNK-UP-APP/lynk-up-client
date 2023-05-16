@@ -9,3 +9,9 @@ header {
 .header-logo {
   height: 15vh;
 }
+
+.nav-drop {
+  position: fixed;
+  top: 6vh;
+  right: 1vw;
+}
