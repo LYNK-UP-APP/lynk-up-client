@@ -10,6 +10,8 @@ function CreateEvent() {
     const [time, setTime] = useState('Time');
     const [group, setGroup] = useState('Group');
 
+    console.log(eventName, eventDescription, date, time, group)
+
   return (
     <div>
         <section className='card'>
@@ -24,11 +26,7 @@ function CreateEvent() {
             </input>
             <p className='line-break'></p>
             <section className='date-time'>
-                {/* <input className='short-input'
-                    placeholder='Date'
-                    onChange={event => setDate(event.target.value)}>
-                </input> */}
-                <input 
+                <input
                     className='short-input'
                     type="date" 
                     onChange={event => setDate(event.target.value)}
