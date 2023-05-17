@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import EventTile from '../EventTile/EventTile';
 import './Dashboard.css'
-import { getUser } from '../../ApiCalls';
 
 const Dashboard = () => {
 

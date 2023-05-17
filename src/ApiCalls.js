@@ -4,7 +4,7 @@ const getUser = phone => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error;
+        throw new Error();
       }
     })
     .then(data => console.log(data))
