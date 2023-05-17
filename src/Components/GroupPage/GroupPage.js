@@ -45,52 +45,58 @@ const GroupPage = () => {
 
   return (
     <div className="groupPage">
-      <div className="group">
+      <div className="half-card">
         <div className="group-header">
-          <h2>Groups</h2>
-          <input
+          <h2 className='title'>Groups</h2>
+        </div>
+        <input
+            className='short-input'
             type="text"
             placeholder="Search groups..."
             onChange={handleGroupSearch}
           />
-        </div>
         {groups.map((group) => (
           <div key={group.id}>{group.groupName}</div>
         ))}
       </div>
 
-      <div className="create-group">
-        <div className="create-group-header">
-          <h2>Create New Group</h2>
+      <div className="half-card">
+        <div className="group-header">
+          <h2 className='title'>Create New Group</h2>
         </div>
-        <form onSubmit={handleGroupSubmit}>
+        <form
+          className='form' 
+          onSubmit={handleGroupSubmit}>
           <input
+            className='short-input'
             type="text"
             placeholder="Group Name"
             value={groupName}
             onChange={handleGroupNameChange}
           />
           <input
+            className='short-input'
             type="text"
             placeholder="Search friends..."
             value={searchTerm}
             onChange={handleFriendSearch}
           />
+          <p className='short-line-break'></p>
           {dummyFriends
             .filter((friend) =>
               friend.name.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .map((friend) => (
-              <div key={friend.id} onClick={() => handleFriendSelection(friend.name)}>
+              <div className='short-tile' key={friend.id} onClick={() => handleFriendSelection(friend.name)}>
                 {friend.name}
               </div>
             ))}
-          <div>
-            Selected Friends:
+          <p className='short-line-break'></p>
+            <p className='selected'>Selected Friends:</p>
             {selectedFriends.map((friend, index) => (
-              <span key={index}>{friend}</span>
+              <span className='short-tile' key={index}>{friend}</span>
             ))}
-          </div>
+
           <button type="submit">Create Group</button>
         </form>
       </div>
