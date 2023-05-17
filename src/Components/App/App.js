@@ -6,20 +6,26 @@ import EventInfo from '../EventInfo/EventInfo';
 import FriendsPage from '../FriendsPage/FriendsPage';
 import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 function App() {
-  return (
-    <div>
-      <h1>YUH</h1>
-      <Header></Header>
 
-      <CreateEvent></CreateEvent>
-      <Dashboard></Dashboard>
-      <ErrorPage></ErrorPage>
-      <EventInfo></EventInfo>
-      <FriendsPage></FriendsPage>
-      <GroupPage></GroupPage>
-    </div>
+  return (
+    <>
+      <Header />
+      <main>
+        <Switch>
+          <Route exact path="/dashboard" render={() => <Dashboard/>}/>
+          <Route exact path="/groups" render={() => <GroupPage/>}/>
+          <Route exact path="/friends" render={() => <FriendsPage/>}/>
+          <Route exact path="/new-event" render={() => <CreateEvent/>}/>
+          <Route exact path="/event/:id" render={() => <EventInfo/>}/>
+          <Route exact path="/"><Redirect to="/dashboard"/></Route>
+          <Route exact path="/404"><ErrorPage/></Route>
+          <Route path="*"><Redirect to="/404"/></Route>
+        </Switch>
+      </main>
+    </>
   );
 }
 
