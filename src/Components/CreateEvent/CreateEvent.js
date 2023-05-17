@@ -24,13 +24,21 @@ function CreateEvent() {
             </input>
             <p className='line-break'></p>
             <section className='date-time'>
-                <input className='short-input'
+                {/* <input className='short-input'
                     placeholder='Date'
                     onChange={event => setDate(event.target.value)}>
+                </input> */}
+                <input 
+                    className='short-input'
+                    type="date" 
+                    onChange={event => setDate(event.target.value)}
+                    > 
                 </input>
-                <input className='short-input'
-                    placeholder='Time'
-                    onChange={event => setTime(event.target.value)}>
+                <input 
+                    className='short-input'
+                    type="time" 
+                    onChange={event => setTime(event.target.value)}
+                    > 
                 </input>
             </section>
             <p className='line-break'></p>
