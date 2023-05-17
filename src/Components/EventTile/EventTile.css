@@ -3,6 +3,7 @@
     width: var(--section-height);
     background-color:azure;
     margin-top: 1vh;
+    border: 1px solid black;
 }
 .event-info {
     display: flex;

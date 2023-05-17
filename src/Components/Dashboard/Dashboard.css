@@ -3,7 +3,7 @@
     min-height: var(--section-min-height);
     width: var(--section-width);
     min-height: var(--section-min-width);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color-white);
 }
 
 .dashboard-header{
@@ -12,6 +12,7 @@
     justify-content: center;
     width: var(--section-width);
     height: 10vh;
-    background-color: var(--secondary-color-black);
+    background-color: var(--secondary-color-white);
+    border: 1px solid black;
 }
 

@@ -1,0 +1,40 @@
+.groupPage{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.group{ 
+    height: var(--section-height);
+    min-height: var(--section-min-height);
+    width: 35vw;
+    min-height: var(--section-min-width);
+    background-color: var(--secondary-color-white);
+}
+
+.group-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    height: 10vh;
+    background-color: var(--secondary-color-white);
+    border: 1px solid black;
+}
+.create-group{ 
+    height: var(--section-height);
+    min-height: var(--section-min-height);
+    width: 35vw;
+    min-height: var(--section-min-width);
+    background-color: var(--secondary-color-white);
+}
+
+.create-group-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35vw;
+    height: 10vh;
+    background-color: var(--secondary-color-white);
+    border: 1px solid black;
+}
