@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import EventTile from '../EventTile/EventTile';
 import './Dashboard.css'
+import { getUser } from '../../ApiCalls';
 
 const Dashboard = () => {
+
   const events = [
     { id: 1, name: 'Event 1', time: 5 },
     { id: 2, name: 'Event 2', time: 2 },
