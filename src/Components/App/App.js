@@ -7,8 +7,26 @@ import FriendsPage from '../FriendsPage/FriendsPage';
 import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateUser, updateEvents, updateFriends, updateGroups } from '../../app/rootSlice';
+import { useEffect } from 'react';
+import { getUser } from '../../ApiCalls';
 
 function App() {
+  const user = useSelector(state => state.root.user);
+  const events = useSelector(state => state.root.events);
+  const friends = useSelector(state => state.root.friends);
+  const groups = useSelector(state => state.root.groups);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getUser('888-888-8888')
+    .then(data => {
+      dispatch(updateUser(data.data));
+      dispatch(updateEvents(data.data.events));
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, []);
 
   return (
     <>
