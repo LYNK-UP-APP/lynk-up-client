@@ -1,9 +1,8 @@
-.event-tile{
-    height: 2vh;
-    width: var(--section-height);
-    background-color:azure;
-    margin-top: 1vh;
-    border: 1px solid black;
+.long-tile {
+    width: 50vw;
+    height: 5vh;
+    text-align: center;
+    background-color: white;
 }
 .event-info {
     display: flex;

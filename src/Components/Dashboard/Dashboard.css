@@ -1,18 +1,16 @@
-.dashboard{ 
+.card {
     height: var(--section-height);
-    min-height: var(--section-min-height);
     width: var(--section-width);
-    min-height: var(--section-min-width);
-    background-color: var(--secondary-color-white);
-}
-
-.dashboard-header{
+    background-color: var(--secondary-color-black);
+    border-radius: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--section-width);
-    height: 10vh;
-    background-color: var(--secondary-color-white);
-    border: 1px solid black;
+    flex-direction: column;
+    gap: 1rem;
 }
 
+.long-input {
+    width: 50vw;
+    height: 5vh;
+    text-align: center;
+    background-color: white;
+}
