@@ -3,7 +3,9 @@
     height: 5vh;
     text-align: center;
     background-color: white;
+    margin-top: 1rem;
 }
+
 .event-info {
     display: flex;
     justify-content: space-between;
