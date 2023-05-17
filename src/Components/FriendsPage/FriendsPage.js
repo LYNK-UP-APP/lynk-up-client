@@ -3,17 +3,22 @@ import './FriendsPage.css'
 
 function FriendsPage() {
 
-  const [friends, setFriends] = useState(['Trevor', 'Gus', 'Joe', 'Jill'])
+  const friends = ['Trevor', 'Gus', 'Joe', 'Jill']
   const [search, setSearch] = useState('Search Friends');
+  const [filteredFriends, setFilteredFriends] = useState(['Trevor', 'Gus', 'Joe', 'Jill']);
 
-  const displayFriends = friends.map(friend => {
+  const displayFriends = filteredFriends.map(friend => {
     return <div className='long-tile'>{friend}</div>
   })
 
-  const filterSearch = (value) => {
-    console.log(value)
-    setFriends(['Trevor', 'Gus', 'Joe', 'Jill'])
-    setFriends(friends.filter(friend => friend.includes(value)))
+  const filterSearch = value => {
+    const filteredFriends = friends.filter(friend => {
+      return friend.includes(value);
+    });
+    setFilteredFriends(filteredFriends)
+    filteredFriends.map(friend => {
+      return <div className='long-tile'>{friend}</div>
+    })
   }
 
   return (
