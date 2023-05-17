@@ -1,17 +1,17 @@
 header {
   position: fixed;
   top: 0;
-  height: 15vh;
+  height: 10vh;
   width: 100vw;
   background-color: var(--primary-color);
 }
 
 .header-logo {
-  height: 15vh;
+  height: 12vh;
 }
 
 .nav-drop {
   position: fixed;
-  top: 6vh;
+  top: 4vh;
   right: 1vw;
 }
