@@ -20,17 +20,18 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="dashboard">
-      <div className="dashboard-header">
-        <h2>EVENTS</h2>
+    <div>
+      <section className="card">
+        <h2 className="title">Events</h2>
           <input
+            className='long-input'
             type="text"
             placeholder="Search events..."
             value={searchTerm}
             onChange={handleSearch}
           />
-            </div>
-      <EventTile events={filteredEvents} />
+          <EventTile events={filteredEvents} />
+      </section>
     </div>
   );
 };
