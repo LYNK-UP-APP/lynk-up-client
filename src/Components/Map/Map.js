@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import "./Map.css";
+
 const AutoComplete = () => {
 //  const autoCompleteRef = useRef();
  const inputRef = useRef();
@@ -16,7 +17,7 @@ const AutoComplete = () => {
 //  }, []);
  return (
   <div>
-   <input className="long-input" ref={inputRef} />
+   <input className="long-input" ref={inputRef}/>
   </div>
  );
 };
