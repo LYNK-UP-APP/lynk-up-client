@@ -1,0 +1,12 @@
+.event-tile{
+    height: 2vh;
+    width: var(--section-height);
+    background-color:azure;
+    margin-top: 1vh;
+    border: 1px solid black;
+}
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
