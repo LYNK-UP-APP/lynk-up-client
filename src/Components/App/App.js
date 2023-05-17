@@ -13,13 +13,9 @@ import { useEffect } from 'react';
 import { getUser } from '../../ApiCalls';
 
 function App() {
-  const user = useSelector(state => state.root.user);
-  const events = useSelector(state => state.root.events);
-  const friends = useSelector(state => state.root.friends);
-  const groups = useSelector(state => state.root.groups);
-  const dispatch = useDispatch();
 
   useEffect(() => {
+    const dispatch = useDispatch();
     getUser('888-888-8888')
     .then(data => {
       dispatch(updateUser(data.data));
