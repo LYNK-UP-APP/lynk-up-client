@@ -10,6 +10,7 @@ function CreateEvent() {
     const [time, setTime] = useState('Time');
     const [group, setGroup] = useState('Group');
 
+    //This is just so the properties are used for now, our API POST will use these variables later
     console.log(eventName, eventDescription, date, time, group)
 
   return (
