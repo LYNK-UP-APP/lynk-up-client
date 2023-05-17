@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EventInfo from '../EventInfo/EventInfo';
+import EventTile from '../EventTile/EventTile';
 import './Dashboard.css'
 
 const Dashboard = () => {
@@ -30,7 +30,7 @@ const Dashboard = () => {
             onChange={handleSearch}
           />
             </div>
-      <EventInfo events={filteredEvents} />
+      <EventTile events={filteredEvents} />
     </div>
   );
 };
