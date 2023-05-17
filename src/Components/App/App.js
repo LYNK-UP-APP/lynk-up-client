@@ -8,7 +8,7 @@ import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateUser, updateEvents, updateFriends, updateGroups } from '../../app/rootSlice';
+import { updateUser, updateEvents } from '../../app/rootSlice';
 import { useEffect } from 'react';
 import { getUser } from '../../ApiCalls';
 
