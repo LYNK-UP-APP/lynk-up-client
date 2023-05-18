@@ -4,8 +4,8 @@ import './Dashboard.css'
 
 const Dashboard = () => {
   const events = [
-    { id: 1, name: 'Event 1', time: 5 },
-    { id: 2, name: 'Event 2', time: 2 },
+    { id: 1, name: 'Event 1', time: '3:00 pm' },
+    { id: 2, name: 'Event 2', time: '12:00 am' },
     { id: 3, name: 'Event 3', time: 9 }
   ];
 

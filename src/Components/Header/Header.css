@@ -12,6 +12,12 @@ header {
 
 .nav-drop {
   position: fixed;
-  top: 4vh;
+  top: 3vh;
   right: 1vw;
+  height: 5vh;
+  width: 8vw;
+  background-color: var(--secondary-color-white);
+  color: var(--secondary-color-black);
+  font-family: var(--secondary-font);
+  font-size: 2vh;
 }
