@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/groups" render={() => <GroupPage/>}/>
           <Route exact path="/friends" render={() => <FriendsPage/>}/>
           <Route exact path="/new-event" render={() => <CreateEvent/>}/>
-          <Route exact path="/event/:id" render={({ match }) => {
+          <Route exact path="/events/:id" render={({ match }) => {
             const { id } = match.params;
             return <EventInfo id={id}/>
           }}/>
