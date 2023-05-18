@@ -4,10 +4,16 @@
     text-align: center;
     background-color: white;
     margin-top: 1rem;
+    font-family: var(--secondary-font);
+    font-size: 2vh;
 }
 
 .event-info {
+    height: 5vh;
+    margin-top: 2.5vh;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
   }
+

@@ -4,7 +4,6 @@ import './Dashboard.css'
 import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
-
   const events = useSelector(state => state.root.events);
 
   const [searchTerm, setSearchTerm] = useState('');
