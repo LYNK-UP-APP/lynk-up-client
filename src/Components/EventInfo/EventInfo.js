@@ -5,7 +5,7 @@ function EventInfo() {
 
   return (
     <section className='event-card'>
-      <h2>Event Name Is This Name</h2>
+      <h2 className='title'>Event Name Is This Name</h2>
       <section className='info-section'>
         <section className='event-info-left'>
           <p>August 15th, 2023 at 7:30 PM</p>
