@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import EventTile from '../EventTile/EventTile';
 import './Dashboard.css'
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => {
-  const events = [
-    { id: 1, name: 'Event 1', time: 5 },
-    { id: 2, name: 'Event 2', time: 2 },
-    { id: 3, name: 'Event 3', time: 9 }
-  ];
+
+  const events = useSelector(state => state.root.events);
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -16,7 +14,7 @@ const Dashboard = () => {
   };
 
   const filteredEvents = events.filter(event =>
-    event.name.toLowerCase().includes(searchTerm.toLowerCase())
+    event.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (

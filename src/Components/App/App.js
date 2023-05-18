@@ -7,8 +7,22 @@ import FriendsPage from '../FriendsPage/FriendsPage';
 import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { updateUser, updateEvents } from '../../app/rootSlice';
+import { useEffect } from 'react';
+import { getUser } from '../../ApiCalls';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getUser('888-888-8888')
+    .then(data => {
+      dispatch(updateUser(data.data.attributes));
+      dispatch(updateEvents(data.data.events));
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, [dispatch]);
 
   return (
     <>
