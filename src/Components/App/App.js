@@ -42,7 +42,10 @@ function App() {
           <Route exact path="/groups" render={() => <GroupPage/>}/>
           <Route exact path="/friends" render={() => <FriendsPage/>}/>
           <Route exact path="/new-event" render={() => <CreateEvent/>}/>
-          <Route exact path="/event/:id" render={() => <EventInfo/>}/>
+          <Route exact path="/events/:id" render={({ match }) => {
+            const { id } = match.params;
+            return <EventInfo id={id}/>
+          }}/>
           <Route exact path="/"><Redirect to="/dashboard"/></Route>
           <Route exact path="/404"><ErrorPage/></Route>
           <Route path="*"><Redirect to="/404"/></Route>
