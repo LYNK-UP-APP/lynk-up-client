@@ -6,6 +6,7 @@ function FriendsPage() {
   const [search, setSearch] = useState('');
   const [friends, setFriends] = useState([]);
   const [filteredFriends, setFilteredFriends] = useState([]);
+  const [newFriendName, setNewFriendName] = useState('');
 
   useEffect(() => {
     getFriends(1)
@@ -17,7 +18,7 @@ function FriendsPage() {
   }, []);
 
   useEffect(() => {
-    filterSearch(search);
+    filterFriends(search);
   }, [search]);
 
   const displayFriends = filteredFriends.map(friend => (
@@ -26,12 +27,25 @@ function FriendsPage() {
     </div>
   ));
 
-  const filterSearch = value => {
+  const filterFriends = value => {
     const filteredFriends = friends.filter(friend => {
       return friend.user_name.toLowerCase().includes(value.toLowerCase());
     });
     setFilteredFriends(filteredFriends);
   }
+
+  const handleSearch = event => {
+    setSearch(event.target.value);
+  };
+
+  const handleAddName = () => {
+    if (newFriendName !== '') {
+      const newFriend = { user_id: friends.length + 1, user_name: newFriendName };
+      setFriends([...friends, newFriend]);
+      setFilteredFriends([...filteredFriends, newFriend]);
+      setNewFriendName('');
+    }
+  };
 
   return (
     <div>
@@ -41,9 +55,18 @@ function FriendsPage() {
           className='long-input'
           placeholder="Search"
           value={search}
-          onChange={event => setSearch(event.target.value)}
+          onChange={handleSearch}
         />
         {displayFriends}
+        <div>
+          <input
+            type="text"
+            placeholder="Enter a new name"
+            value={newFriendName}
+            onChange={event => setNewFriendName(event.target.value)}
+          />
+          <button onClick={handleAddName}>Add Name</button>
+        </div>
       </section>
     </div>
   )
