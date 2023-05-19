@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { updateUser, updateEvents } from '../../app/rootSlice';
 import { useEffect } from 'react';
 import { getUser } from '../../ApiCalls';
+import { getFriends } from '../../ApiCalls';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +24,14 @@ function App() {
     })
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
+
+  useEffect(() => {
+    getFriends(1)
+      .then(data => {
+        console.log('friends', data.data.friends);
+      })
+      .catch(err => console.log(`There has been an error: ${err}`))
+  }, []);
 
   return (
     <>
