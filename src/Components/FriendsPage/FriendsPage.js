@@ -19,7 +19,7 @@ function FriendsPage() {
 
   useEffect(() => {
     filterFriends(search);
-  }, [search]);
+  });
 
   const displayFriends = filteredFriends.map(friend => (
     <div className='long-tile' key={friend.user_id}>
