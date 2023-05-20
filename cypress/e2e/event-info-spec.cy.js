@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('Event Info', () => {
   beforeEach(() => {
     cy.login();
     cy.getEventOne();
