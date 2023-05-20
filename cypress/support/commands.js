@@ -23,3 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', () => {
+  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/users/888-888-8888', {
+    statusCode: 200,
+    fixture: 'getUser.json'
+  })
+  .visit('http://localhost:3000/');
+});
+
+Cypress.Commands.add('getEventOne', () => {
+  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/events/1', {
+    statusCode: 200,
+    fixture: 'event1.json'
+  });
+});
+
+Cypress.Commands.add('clickEventOne', () => {
+  cy.get('[data-cy="event-link"]').first().click();
+});
