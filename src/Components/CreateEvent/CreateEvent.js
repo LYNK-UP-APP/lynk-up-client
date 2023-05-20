@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './CreateEvent.css'
-import AutoComplete from '../Map/Map';
+// import AutoComplete from '../Map/Map';
 
 function CreateEvent() {
 
