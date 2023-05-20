@@ -18,12 +18,12 @@ function EventInfo({ id }) {
 
   const eventCard =
     <>
-      <h2 className='title'>{event.title}</h2>
+      <h2 data-cy='event-title' className='title'>{event.title}</h2>
       <section className='info-section'>
         <section className='event-info-left'>
           <p>{`${event.date} at ${event.time}`}</p>
           <p>Group name: {event.group?.name}</p>
-          <p>{event.details}</p>
+          <p data-cy='event-desc'>{event.details}</p>
         </section>
         <section className='event-info-right'>
           <p>{event.address}</p>

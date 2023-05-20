@@ -19,8 +19,9 @@ const Dashboard = () => {
   return (
     <div>
       <section className="card">
-        <h2 className="title">Events</h2>
+        <h2 data-cy='dashboard-header' className="title">Events</h2>
           <input
+            data-cy='search-input'
             className='long-input'
             type="text"
             placeholder="Search events..."
