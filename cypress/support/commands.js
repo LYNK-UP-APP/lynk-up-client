@@ -31,3 +31,10 @@ Cypress.Commands.add('login', () => {
   })
   .visit('http://localhost:3000/');
 });
+
+Cypress.Commands.add('getEventOne', () => {
+  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/events/1', {
+    statusCode: 200,
+    fixture: 'event1.json'
+  });
+});
