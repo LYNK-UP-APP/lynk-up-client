@@ -38,3 +38,7 @@ Cypress.Commands.add('getEventOne', () => {
     fixture: 'event1.json'
   });
 });
+
+Cypress.Commands.add('clickEventOne', () => {
+  cy.get('[data-cy="event-link"]').first().click();
+});
