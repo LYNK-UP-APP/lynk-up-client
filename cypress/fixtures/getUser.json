@@ -1,0 +1,42 @@
+{
+  "data": {
+      "id": "1",
+      "attributes": {
+          "user_name": "@AKH",
+          "full_name": "Antonio King Hunt",
+          "phone_number": "8888888888"
+      },
+      "events": [
+          {
+              "id": 1,
+              "title": "Magic Tournament",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 2,
+              "title": "THE BIG BASH BDAY BONANZA",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 3,
+              "title": "Gus' Bday Jamboree",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 4,
+              "title": "SCREEEEEEEEEER",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 5,
+              "title": "Turing Graduation",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          }
+      ]
+  }
+}
