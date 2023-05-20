@@ -12,8 +12,8 @@ function Header() {
 
   return (
     <header>
-      <img className='header-logo' alt='Lynk Up Logo' src={logo} />
-      <select className="nav-drop" onChange={handleChange}>
+      <img data-cy='logo' className='header-logo' alt='Lynk Up Logo' src={logo} />
+      <select data-cy='dropdown' className="nav-drop" onChange={handleChange}>
         <option value="/dashboard"> Dashboard </option>
         <option value="/groups"> Groups </option>
         <option value="/friends"> Friends </option>

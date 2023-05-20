@@ -1,5 +1,43 @@
-describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
-  })
-})
+describe('Header', () => {
+  beforeEach(() => {
+    cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/users/888-888-8888', {
+      statusCode: 200,
+      fixture: 'getUser.json'
+    })
+    .visit('http://localhost:3000/');
+  });
+
+  it('Should have a header', () => {
+    cy.get('header').should('be.visible');
+  });
+
+  it('Should have a logo', () => {
+    cy.get("[data-cy='logo']").should('be.visible');
+  });
+
+  it('Should have a dropdown menu', () => {
+    cy.get("[data-cy='dropdown']").should('be.visible');
+  });
+
+  it('Should have a link to friends and selecting it should navigate you to the friends page', () => {
+    cy.get("[data-cy='dropdown']").select('Friends');
+    cy.url().should('include', '/friends');
+  });
+
+  it('Should have a link to groups and selecting it should navigate you to the groups page', () => {
+    cy.get("[data-cy='dropdown']").select('Groups');
+    cy.url().should('include', '/groups');
+  });
+
+  it('Should have a link to create a new event and selecting it should navigate you to the new event page', () => {
+    cy.get("[data-cy='dropdown']").select('New Event');
+    cy.url().should('include', '/new-event');
+  });
+
+  it('Should have a link to the dashboard and selecting it should navigate you to the dashboard page', () => {
+    cy.get("[data-cy='dropdown']").select('New Event');
+    cy.url().should('include', '/new-event');
+    cy.get("[data-cy='dropdown']").select('Dashboard');
+    cy.url().should('include', '/dashboard');
+  });
+});

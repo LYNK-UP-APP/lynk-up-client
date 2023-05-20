@@ -46,7 +46,7 @@ function CreateEvent() {
                 placeholder='group'
                 onChange={event => setGroup(event.target.value)}>
             </input>
-            <AutoComplete/>
+            {/* <AutoComplete/> */}
         </section>
     </div>
   )
