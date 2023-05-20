@@ -1,10 +1,6 @@
 describe('Header', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/users/888-888-8888', {
-      statusCode: 200,
-      fixture: 'getUser.json'
-    })
-    .visit('http://localhost:3000/');
+    cy.login();
   });
 
   it('Should have a header', () => {
