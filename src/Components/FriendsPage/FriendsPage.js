@@ -7,10 +7,10 @@ import { updateFriends } from '../../app/rootSlice';
 
 function FriendsPage() {
   const [search, setSearch] = useState('');
-  const [filteredFriends, setFilteredFriends] = useState([]);
   const [newFriendName, setNewFriendName] = useState('');
   const dispatch = useDispatch();
   const friends = useSelector(state => state.root.friends);
+  const [filteredFriends, setFilteredFriends] = useState(friends);
   const user = useSelector(state => state.root.user);
 
   
@@ -20,12 +20,18 @@ function FriendsPage() {
         dispatch(updateFriends(data.data.friends));
       })
       .catch(err => console.log(`There has been an error: ${err}`));
-  }, []);
+  }, [dispatch, user.id]);
   
 
   useEffect(() => {
+    const filterFriends = value => {
+      const filteredFriends = friends.filter(friend => {
+        return friend.user_name.toLowerCase().includes(value.toLowerCase());
+      });
+      setFilteredFriends(filteredFriends);
+    };
     filterFriends(search);
-  }, [search]);
+  }, [search, friends]);
 
 
   const displayFriends = filteredFriends.map(friend => (
@@ -34,12 +40,6 @@ function FriendsPage() {
     </div>
   ));
 
-  const filterFriends = value => {
-    const filteredFriends = friends.filter(friend => {
-      return friend.user_name.toLowerCase().includes(value.toLowerCase());
-    });
-    setFilteredFriends(filteredFriends);
-  };
 
   const handleSearch = event => {
     setSearch(event.target.value);
