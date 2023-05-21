@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { updateUser, updateEvents } from '../../app/rootSlice';
 import { useEffect } from 'react';
 import { getUser } from '../../ApiCalls';
-import { getFriends } from '../../ApiCalls';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -25,13 +25,7 @@ function App() {
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
 
-  useEffect(() => {
-    getFriends(1)
-      .then(data => {
-        console.log('friends', data.data.friends);
-      })
-      .catch(err => console.log(`There has been an error: ${err}`))
-  }, []);
+
 
   return (
     <>
@@ -40,7 +34,7 @@ function App() {
         <Switch>
           <Route exact path="/dashboard" render={() => <Dashboard/>}/>
           <Route exact path="/groups" render={() => <GroupPage/>}/>
-          <Route exact path="/friends" render={() => <FriendsPage/>}/>
+          <Route exact path="/friends" render={() => <FriendsPage/>} />
           <Route exact path="/new-event" render={() => <CreateEvent/>}/>
           <Route exact path="/event/:id" render={() => <EventInfo/>}/>
           <Route exact path="/"><Redirect to="/dashboard"/></Route>
@@ -53,3 +47,4 @@ function App() {
 }
 
 export default App;
+
