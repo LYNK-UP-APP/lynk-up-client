@@ -19,7 +19,7 @@ describe('Group Page', () => {
    it('Should autofill an address', () => {
     cy.get('div > .long-input')
     .type('1600 Pennsylvania');
-    cy.get('.pac-item', { timeout: 10000 }).should('be.visible');
+    cy.get('.pac-item', { timeout: 15000 }).should('be.visible');
     cy.get('div > .long-input')
     .type("{downarrow}")
     .type("{enter}");
@@ -31,7 +31,7 @@ describe('Group Page', () => {
   it('Should autofill address using the name of a place', () => {
     cy.get('div > .long-input')
     .type('The white hous');
-    cy.get('.pac-item', { timeout: 10000 }).should('be.visible');
+    cy.get('.pac-item', { timeout: 15000 }).should('be.visible');
     cy.get('div > .long-input')
     .type("{downarrow}")
     .type("{enter}");
