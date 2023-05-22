@@ -17,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUser('888-888-8888')
+    getUser('303-386-2891')
     .then(data => {
       dispatch(updateUser(data.data.attributes));
       dispatch(updateEvents(data.data.events));
