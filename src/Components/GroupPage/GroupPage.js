@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './GroupPage.css';
 import { useSelector } from 'react-redux';
-import { getFriends } from '../../ApiCalls';
+// import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
   { id: 1, name: 'Friend 1' },
