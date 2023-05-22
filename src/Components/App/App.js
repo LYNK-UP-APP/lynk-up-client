@@ -17,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUser('888-888-8888')
+    getUser('303-386-2891')
     .then(data => {
       dispatch(updateUser(data.data.attributes));
       dispatch(updateEvents(data.data.events));
@@ -49,7 +49,7 @@ function App() {
         <Switch>
           <Route exact path="/dashboard" render={() => <Dashboard/>}/>
           <Route exact path="/groups" render={() => <GroupPage/>}/>
-          <Route exact path="/friends" render={() => <FriendsPage/>}/>
+          <Route exact path="/friends" render={() => <FriendsPage/>} />
           <Route exact path="/new-event" render={() => <CreateEvent/>}/>
           <Route exact path="/events/:id" render={({ match }) => {
             const { id } = match.params;
@@ -65,3 +65,4 @@ function App() {
 }
 
 export default App;
+

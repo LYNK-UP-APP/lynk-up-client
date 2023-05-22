@@ -16,7 +16,7 @@ export const rootSlice = createSlice({
       state.events = action.payload;
     },
     updateFriends: (state, action) => {
-      // state.friends = action.payload aka [ updatedFriends ]
+      state.friends = action.payload 
     },
     updateGroups: (state, action) => {
       state.groups = action.payload;
