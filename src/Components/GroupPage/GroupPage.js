@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './GroupPage.css';
+import { useSelector } from 'react-redux';
+import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
   { id: 1, name: 'Friend 1' },
@@ -11,7 +13,8 @@ const GroupPage = () => {
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
-  const [groups, setGroups] = useState([]);
+  const groups = useSelector(state => state.root.groups);
+  console.log(groups)
 
   const handleGroupNameChange = (event) => {
     setGroupName(event.target.value);
@@ -29,12 +32,12 @@ const GroupPage = () => {
   const handleGroupSubmit = (event) => {
     event.preventDefault();
 
-    const newGroup = {
-      groupName,
-      friends: selectedFriends
-    };
+    // const newGroup = {
+    //   groupName,
+    //   friends: selectedFriends
+    // };
 
-    setGroups([...groups, newGroup]);
+    // setGroups([...groups, newGroup]);
 
     setGroupName('');
     setSelectedFriends([]);
@@ -55,9 +58,11 @@ const GroupPage = () => {
             placeholder="Search groups..."
             onChange={handleGroupSearch}
           />
-        {groups.map((group) => (
-          <div key={group.id}>{group.groupName}</div>
-        ))}
+        {
+        groups.groups.map((group) => (
+          <div className='short-tile' key={group.id}>{group.name}</div>
+        ))
+      }
       </div>
 
       <div className="half-card">

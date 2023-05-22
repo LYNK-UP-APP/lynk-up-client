@@ -8,9 +8,9 @@ import GroupPage from '../GroupPage/GroupPage';
 import Header from '../Header/Header';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { updateUser, updateEvents } from '../../app/rootSlice';
+import { updateUser, updateEvents, updateGroups } from '../../app/rootSlice';
 import { useEffect } from 'react';
-import { getUser } from '../../ApiCalls';
+import { getGroups, getUser } from '../../ApiCalls';
 import { getFriends } from '../../ApiCalls';
 
 function App() {
@@ -32,6 +32,15 @@ function App() {
       })
       .catch(err => console.log(`There has been an error: ${err}`))
   }, []);
+
+  useEffect(() => {
+    getGroups()
+    .then(data => {
+      console.log(data)
+      dispatch(updateGroups(data));
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, [dispatch]);
 
   return (
     <>

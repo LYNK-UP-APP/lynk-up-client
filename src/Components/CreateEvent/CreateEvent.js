@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './CreateEvent.css'
-// import AutoComplete from '../Map/Map';
+import AutoComplete from '../Map/Map';
 
 function CreateEvent() {
 
@@ -46,7 +46,7 @@ function CreateEvent() {
                 placeholder='group'
                 onChange={event => setGroup(event.target.value)}>
             </input>
-            {/* <AutoComplete/> */}
+            <AutoComplete/>
         </section>
     </div>
   )
