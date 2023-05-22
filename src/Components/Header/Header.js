@@ -14,6 +14,7 @@ function Header() {
     <header>
       <img className='header-logo' alt='Lynk Up Logo' src={logo} />
       <select className="nav-drop" onChange={handleChange}>
+        <option value="" disabled selected>Select</option>
         <option value="/dashboard"> Dashboard </option>
         <option value="/groups"> Groups </option>
         <option value="/friends"> Friends </option>
@@ -24,3 +25,7 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
