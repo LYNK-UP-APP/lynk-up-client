@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', () => {
-  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/users/888-888-8888', {
+  cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/303-386-2891', {
     statusCode: 200,
     fixture: 'getUser.json'
   })
