@@ -64,14 +64,14 @@ function FriendsPage() {
           onChange={handleSearch}
         />
         {displayFriends}
-        <div>
+        <div className="add-friends">
           <input
             type="text"
             placeholder="Enter a new name"
             value={newFriendName}
             onChange={event => setNewFriendName(event.target.value)}
           />
-          <button onClick={handleAddName}>Add Name</button>
+          <button className='add-friend-button' onClick={handleAddName}>Add Name</button>
         </div>
       </section>
     </div>

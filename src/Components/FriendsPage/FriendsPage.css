@@ -14,3 +14,16 @@
     text-align: center;
     background-color: white;
 }
+
+.add-friends{
+    display: flex;
+    flex-direction: row;
+    height: 3vh;
+}
+
+.add-friend-button{
+    background-color: var(--secondary-color-grey);
+    border-radius: 20px;
+    height: 3vh;
+    width: 7vw;
+}
