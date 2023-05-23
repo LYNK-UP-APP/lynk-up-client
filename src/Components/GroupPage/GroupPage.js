@@ -13,13 +13,17 @@ const dummyFriends = [
 
 const GroupPage = () => {
 
+  const [loading, setLoading] = useState(true);
+  const [groups, setGroups] = useState({});
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     getGroups()
     .then(data => {
-      console.log(data)
-      dispatch(updateGroups(data));
+      console.log('group' + data)
+      setGroups(data);
+      setLoading(false);
     })
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
@@ -27,7 +31,6 @@ const GroupPage = () => {
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
-  const groups = useSelector(state => state.root.groups);
   console.log(groups)
 
   const handleGroupNameChange = (event) => {
@@ -60,8 +63,16 @@ const GroupPage = () => {
   const handleGroupSearch = (event) => {
   };
 
+  const loadingInfo = 
+  <section>
+    <h2 className='title'>Loading...</h2>
+  </section>
+  ;
+
   return (
     <div className="groupPage">
+      {!loading ? 
+      <>
       <div className="half-card">
         <div className="group-header">
           <h2 className='title'>Groups</h2>
@@ -119,6 +130,8 @@ const GroupPage = () => {
           <button type="submit">Create Group</button>
         </form>
       </div>
+      </>
+      : loadingInfo }
     </div>
   );
 };
