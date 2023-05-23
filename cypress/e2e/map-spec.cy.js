@@ -1,4 +1,4 @@
-describe('Group Page', () => {
+describe('Map Page', () => {
   beforeEach(() => {
     cy.login();
     cy.getGroups();
