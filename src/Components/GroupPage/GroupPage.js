@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './GroupPage.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getGroups } from '../../ApiCalls';
-import { updateGroups } from '../../app/rootSlice';
 // import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
