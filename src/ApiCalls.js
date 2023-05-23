@@ -12,7 +12,7 @@ const getUser = phone => {
 
 
 const getEvent = id => {
-  return fetch(`https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/events/${id}`)
+  return fetch(`https://lynk-up-server.onrender.com/events/${id}`)
     .then(res => {
       if (res.ok) {
         return res.json();

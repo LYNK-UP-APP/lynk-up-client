@@ -22,7 +22,7 @@ describe('Header', () => {
 
   it('Should have a link to groups and selecting it should navigate you to the groups page', () => {
     cy.getGroups()
-    cy.get('[data-cy="dropdown"]').select('Groups')
+    cy.get("[data-cy='dropdown']").select('Groups');
     cy.url().should('include', '/groups');
   });
 

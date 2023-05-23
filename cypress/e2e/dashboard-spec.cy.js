@@ -1,6 +1,13 @@
 describe('Dashboard', () => {
   beforeEach(() => {
     cy.login();
+    cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/888-888-8888', {
+      fixture: 'getUser.json'
+    })
+    cy.intercept('GET', 'https://lynk-up-server.onrender.com/events/1', {
+      fixture: 'event1.json'
+    })
+    cy.visit('http://localhost:3000/dashboard')
   });
 
   it('Should have a visible header', () => {

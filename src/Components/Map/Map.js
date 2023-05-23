@@ -7,7 +7,7 @@ const AutoComplete = () => {
 
  useEffect(() => {
   const options = {
-    fields: ["formatted_address", "geometry", "name"],
+    fields: ["formatted_address", "name"],
     strictBounds: false,
     types: ["establishment"]
   };
