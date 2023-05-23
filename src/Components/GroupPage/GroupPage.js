@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './GroupPage.css';
 import { useSelector } from 'react-redux';
+import { getGroups } from '../../ApiCalls';
 // import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
@@ -10,6 +11,16 @@ const dummyFriends = [
 ];
 
 const GroupPage = () => {
+  
+    useEffect(() => {
+    getGroups()
+    .then(data => {
+      console.log(data)
+      dispatch(updateGroups(data));
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, [dispatch]);
+  
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
