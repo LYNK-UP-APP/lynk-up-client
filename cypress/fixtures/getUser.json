@@ -9,8 +9,32 @@
       "events": [
           {
               "id": 1,
-              "title": "Party at the Park",
-              "date": "01/01/2024",
+              "title": "Magic Tournament",
+              "date": "05/20/2023",
+              "time": "5:00 PM MST"
+          },
+          {
+              "id": 2,
+              "title": "THE BIG BASH BDAY BONANZA",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 3,
+              "title": "Gus' Bday Jamboree",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 4,
+              "title": "SCREEEEEEEEEER",
+              "date": "05/20/2023",
+              "time": "7:00 PM MST"
+          },
+          {
+              "id": 5,
+              "title": "Turing Graduation",
+              "date": "06/15/2023",
               "time": "7:00 PM MST"
           }
       ]
