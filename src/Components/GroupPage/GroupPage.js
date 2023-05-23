@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './GroupPage.css';
 import { useSelector } from 'react-redux';
 import { getGroups } from '../../ApiCalls';
+import { useEffect } from 'react';
 // import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
