@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# LYNK-UP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+  - [Introduction](#Introduction)
+  - [Technologies](#Technologies)
+  - [Contributors](#Contributors)
+  - [Illustrations](#Illustrations)
+  - [Deployed Page](#Deployed-Page)
+  - [Wins](#Wins)
+  - [Challenges & Improvements](#Challenges-&-Improvements)
+  - [Set Up](#Set-Up)
+  - [Sources](#Sources)
+  - [Project Spec](#Project-Spec)
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Welcome to LYNK-UP, a sophisticated web application meticulously crafted by a team of eight adept developers, consisting of three frontend and five backend junior developers.
 
-### `npm start`
+LYNK-UP empowers users to effortlessly create and schedule events for themselves and their friends. This innovative platform allows users to specify which group of friends they wish to invite while creating an event. On the dashboard page, users can conveniently access and manage all their upcoming events, ensuring seamless organization and planning.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Throughout the development process, our team embraced the challenge of integrating Redux and Python into our codebase, recognizing the significant advantages these technologies offer in terms of code organization and maintainability. By harnessing their newly acquired expertise in Redux and Python, our developers have successfully engineered a polished and responsive user experience. To guarantee exceptional usability, we conducted thorough user flow testing using Cypress, ensuring that LYNK-UP delivers an unparalleled experience to all its users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our web application boasts cross-device accessibility, enabling users to effortlessly connect with their friends and schedule memorable moments irrespective of the device they prefer. LYNK-UP is here to facilitate meaningful connections and help you stay in touch with your friends, enabling you to schedule a delightful time together, whenever and wherever.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies
+  - Redux
+  - React
+  - Router
+  - Cypress
+  - Python
+  - Jango
 
-### `npm run build`
+## Contributors
+  - [Gus Deribeaux](https://github.com/Gderibeaux)
+  - [Joe Fogiato]()
+  - [Trevor Fitzgerald]()
+  - [Andra Helton]()
+  - [Antonio Hunt]()
+  - [Dawson Timmons]()
+  - [Harrison Ryan]()
+  - [William Lampke]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Illustrations 
+![App]()  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Responsive Design for phone:
 
-### `npm run eject`
+![Phone View]() 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployed Page
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Visit our deployed [LYNK-UP Page]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Wins
+- Self-taught and implemented Redux throughout the project utilizing best practices.
+- Efficiently created and followed user stories, ensuring features catered to our target audience.
+- Prioritized User Experience by focusing on intuitive routing with multiple ways to navigate back to the main page.
+- Collaboratively made decisions when troubleshooting bugs and navigating any course changes within the development process.
+- Encouraged and supported each other to consistently achieve our learning goals and work on areas of technical vulnerability.
+- Maintained a steady pace throughout the project, surpassing our milestones with a successful MVP.💪
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Challenges & Improvements
+  - Navigating error messages and somewhat confusing documentation whilst learning to effectively implement Redux
+  - Deciding, as a team, what our best practices should be when working with unfamiliar concepts
+  - Identifying and prioritizing our most valuable features under a tight timeframe. We were able to apply agile methodologies to keep effective team communication and collaboration. 
+  - Possible future improvements and features:
+    - Implement user authentication and login functionality, enabling personalized user experiences
 
-## Learn More
+## Set Up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Fork this repo  
+2. Clone the repo to your local machine   
+3. Run `npm i`, then ` npm run build`, then `npm start`
+4. View the project in the browser by opening localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Sources
+  - [MDN](http://developer.mozilla.org/en-US/)
+  - [Redux Docs](https://redux.js.org/)
+  - [W3Schools](https://www.w3schools.com/)
+  - [React Docs](https://reactjs.org/docs/getting-started.html)
+  - [Cypress Docs](https://docs.cypress.io/guides/overview/why-cypress.html)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Project Specs
+  - The project spec & rubric can be found [here](https://mod4.turing.edu/projects/capstone/)
