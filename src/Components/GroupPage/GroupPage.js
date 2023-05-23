@@ -10,6 +10,16 @@ const dummyFriends = [
 ];
 
 const GroupPage = () => {
+  
+    useEffect(() => {
+    getGroups()
+    .then(data => {
+      console.log(data)
+      dispatch(updateGroups(data));
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, [dispatch]);
+  
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
