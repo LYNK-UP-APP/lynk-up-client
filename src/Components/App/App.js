@@ -10,7 +10,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { updateUser, updateEvents, updateGroups } from '../../app/rootSlice';
 import { useEffect } from 'react';
-import { getGroups, getUser } from '../../ApiCalls';
+import { getUser } from '../../ApiCalls';
 import { getFriends } from '../../ApiCalls';
 
 function App() {
