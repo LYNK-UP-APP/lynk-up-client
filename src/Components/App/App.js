@@ -33,15 +33,6 @@ function App() {
       .catch(err => console.log(`There has been an error: ${err}`))
   }, []);
 
-  useEffect(() => {
-    getGroups()
-    .then(data => {
-      console.log(data)
-      dispatch(updateGroups(data));
-    })
-    .catch(err => console.log(`There has been an error: ${err}`))
-  }, [dispatch]);
-
   return (
     <>
       <Header />
