@@ -42,3 +42,12 @@ Cypress.Commands.add('getEventOne', () => {
 Cypress.Commands.add('clickEventOne', () => {
   cy.get('[data-cy="event-link"]').first().click();
 });
+
+
+Cypress.Commands.add('getGroups', () => {
+  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/groups', {
+    statusCode: 200,
+    fixture: 'groups.json'
+  })
+  .visit('http://localhost:3000/');
+});

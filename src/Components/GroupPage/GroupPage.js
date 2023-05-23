@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GroupPage.css';
+import { useDispatch } from 'react-redux';
+import { getGroups } from '../../ApiCalls';
+// import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
   { id: 1, name: 'Friend 1' },
@@ -8,10 +11,26 @@ const dummyFriends = [
 ];
 
 const GroupPage = () => {
+
+  const [loading, setLoading] = useState(true);
+  const [groups, setGroups] = useState({});
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getGroups()
+    .then(data => {
+      console.log('group' + data)
+      setGroups(data);
+      setLoading(false);
+    })
+    .catch(err => console.log(`There has been an error: ${err}`))
+  }, [dispatch]);
+
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
-  const [groups, setGroups] = useState([]);
+  console.log(groups)
 
   const handleGroupNameChange = (event) => {
     setGroupName(event.target.value);
@@ -29,12 +48,12 @@ const GroupPage = () => {
   const handleGroupSubmit = (event) => {
     event.preventDefault();
 
-    const newGroup = {
-      groupName,
-      friends: selectedFriends
-    };
+    // const newGroup = {
+    //   groupName,
+    //   friends: selectedFriends
+    // };
 
-    setGroups([...groups, newGroup]);
+    // setGroups([...groups, newGroup]);
 
     setGroupName('');
     setSelectedFriends([]);
@@ -43,8 +62,16 @@ const GroupPage = () => {
   const handleGroupSearch = (event) => {
   };
 
+  const loadingInfo = 
+  <section>
+    <h2 className='title'>Loading...</h2>
+  </section>
+  ;
+
   return (
     <div className="groupPage">
+      {!loading ? 
+      <>
       <div className="half-card">
         <div className="group-header">
           <h2 className='title'>Groups</h2>
@@ -55,9 +82,11 @@ const GroupPage = () => {
             placeholder="Search groups..."
             onChange={handleGroupSearch}
           />
-        {groups.map((group) => (
-          <div key={group.id}>{group.groupName}</div>
-        ))}
+        {
+        groups.groups.map((group) => (
+          <div className='short-tile' key={group.id}>{group.name}</div>
+        ))
+      }
       </div>
 
       <div className="half-card">
@@ -100,6 +129,8 @@ const GroupPage = () => {
           <button type="submit">Create Group</button>
         </form>
       </div>
+      </>
+      : loadingInfo }
     </div>
   );
 };

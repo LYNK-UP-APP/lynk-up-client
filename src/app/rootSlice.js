@@ -19,7 +19,7 @@ export const rootSlice = createSlice({
       state.friends = action.payload 
     },
     updateGroups: (state, action) => {
-      //state.groups = action.payload aka [ updatedGroups ]
+      state.groups = action.payload;
     }
   }
 });
