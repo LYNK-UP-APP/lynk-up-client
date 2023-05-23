@@ -11,27 +11,18 @@ import { useDispatch } from 'react-redux';
 import { updateUser, updateEvents } from '../../app/rootSlice';
 import { useEffect } from 'react';
 import { getUser } from '../../ApiCalls';
-import { getFriends } from '../../ApiCalls';
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUser('888-888-8888')
+    getUser('303-386-2891')
     .then(data => {
       dispatch(updateUser(data.data.attributes));
       dispatch(updateEvents(data.data.events));
     })
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
-
-  useEffect(() => {
-    getFriends(1)
-      .then(data => {
-        console.log('friends', data.data.friends);
-      })
-      .catch(err => console.log(`There has been an error: ${err}`))
-  }, []);
 
   return (
     <>
