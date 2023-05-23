@@ -43,7 +43,7 @@ function CreateEvent() {
             <p className='line-break'></p>
             {/* Probably make this a drop down menu */}
             <input className='long-input'
-                placeholder='group'
+                placeholder='Group'
                 onChange={event => setGroup(event.target.value)}>
             </input>
             {/* <AutoComplete/> */}

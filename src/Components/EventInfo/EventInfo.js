@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './EventInfo.css';
 import { getEvent } from '../../ApiCalls';
+import { Link } from 'react-router-dom'
 
 function EventInfo({ id }) {
 
@@ -31,6 +32,9 @@ function EventInfo({ id }) {
             🗺️
           </div>
         </section>
+        <button className='go-home-button'>
+          <Link to='/dashboard'>Go Home</Link>
+        </button>
       </section>
     </>
   ;
