@@ -22,7 +22,19 @@ describe('Group Page', () => {
     });
 
     it('Should be able to see a list of groups', () => {
-        cy.get('.groupPage > :nth-child(1) > :nth-child(5)').should('contain', 'Group 273?');
+        cy.get('.groupPage > :nth-child(1) > :nth-child(5)').should('contain', 'Super cool fun times');
+    });
+
+    it('Should be able to post a new group', () => {
+        cy.get('[placeholder="Group Name"]').type("awesome fun group!")
+        cy.get('.form > :nth-child(4)').click()
+
+        cy.postGroup()
+        cy.get('.submit').click()
+
+        cy.get('.groupPage > :nth-child(1) > :nth-child(6)').contains('awesome fun group!').should('exist')
     });
   
   });
+
+  

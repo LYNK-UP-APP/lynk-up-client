@@ -10,7 +10,6 @@ const getUser = phone => {
     .catch(err => console.log(err));
 }
 
-
 const getEvent = id => {
   return fetch(`https://lynk-up-server.onrender.com/events/${id}`)
     .then(res => {
@@ -24,7 +23,7 @@ const getEvent = id => {
 }
 
 const getFriends = (user_id) => {
-    return fetch(`https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/users/${user_id}/friends`)
+    return fetch(`https://lynk-up-server.onrender.com/users/1/friends`)
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -33,10 +32,10 @@ const getFriends = (user_id) => {
         }
       })
       .catch(err => console.log(err));
-  }
+}
 
   const getGroups = () => {
-    return fetch(`https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/groups`)
+    return fetch(`https://lynk-up-server.onrender.com/groups/`)
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -45,7 +44,29 @@ const getFriends = (user_id) => {
         }
       })
       .catch(err => console.log(err));
-  }
+}
 
-export { getUser, getFriends, getEvent, getGroups };
+  const postGroups = (groupInfo) => {
 
+    fetch("https://lynk-up-server.onrender.com/groups/create/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "name": groupInfo.name,
+        "user": groupInfo.user,
+        "friends": groupInfo.friends
+      }),
+      })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch(err => console.log(err));
+}
+
+export { getUser, getFriends, getEvent, getGroups, postGroups };
