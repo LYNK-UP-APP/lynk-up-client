@@ -1,14 +1,5 @@
 describe('Event Info', () => {
     beforeEach(() => {
-      cy.login();
-      cy.getEventOne();
-      cy.clickEventOne();
-      cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/888-888-8888', {
-        fixture: 'getUser.json'
-      })
-      cy.intercept('GET', 'https://lynk-up-server.onrender.com/events/1', {
-        fixture: 'event1.json'
-      })
       cy.visit('http://localhost:3000/new-event')
     });
   
@@ -43,7 +34,35 @@ describe('Event Info', () => {
     it('Should have a date for the event', () => {
       cy.get('[type = "time"]').should('be.visible')
     });
+
+    it('Should be able to type in the time slot', () => {
+        cy.get('[type = "time"]').should('be.visible').type('07:20')
+        .should('have.value', '07:20')
+      });
+  
+    it('Should have a date for the event', () => {
+      cy.get('[type = "date"]').should('be.visible').type('2023-03-04')
+      .should('have.value', '2023-03-04')
+    });
+  
     it('Should have a placeholder of group', () => {
       cy.get("[placeholder='Group']").should('be.visible').should('have.attr', 'placeholder', 'Group')
     });
+
+    it('Successfully creates an event', () => {
+        cy.intercept('POST', 'https://lynk-up-server.onrender.com/events', {
+          statusCode: 200,
+        }).as('createEvent')
+
+        cy.get('[placeholder="Event Name"]').type('Event Test');
+        cy.get('.large-input').type('Event Description Test');
+        cy.get('.short-input[type="date"]').type('2023-05-25');
+        cy.get('.short-input[type="time"]').type('12:00');
+        cy.get('[placeholder="Group"]').type('Group');
+        cy.get('div > .long-input').type('123 fun st.')
+        cy.get('button').contains('Create Event').click();
+        cy.wait('@createEvent').then(({ response }) => {
+          expect(response.statusCode).to.equal(200);
+        });
+      });
   });

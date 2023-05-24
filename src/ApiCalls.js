@@ -23,7 +23,7 @@ const getEvent = id => {
 }
 
 const getFriends = (user_id) => {
-    return fetch(`https://lynk-up-server.onrender.com/users/1/friends`)
+    return fetch(`https://lynk-up-server.onrender.com/users/${user_id}/friends`)
       .then(res => {
         if (res.ok) {
           return res.json();
@@ -69,4 +69,30 @@ const getFriends = (user_id) => {
       .catch(err => console.log(err));
 }
 
-export { getUser, getFriends, getEvent, getGroups, postGroups };
+const postEvent = (event) => {
+  fetch('https://lynk-up-server.onrender.com/events/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        "title": event.eventName,
+        "date": event.date,
+        "time": event.time,
+        "address": event.address,
+        "group": event.group,
+        "description": event.eventDescription
+      }),
+  })
+  .then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error();
+    }
+  })
+  .catch(err => console.log(err));
+}
+
+
+export { getUser, getFriends, getEvent, getGroups, postGroups, postEvent };
