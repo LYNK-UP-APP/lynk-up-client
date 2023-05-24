@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add('login', () => {
-  cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/303-386-2891', {
+  cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/1', {
     statusCode: 200,
     fixture: 'getUser.json'
   })
