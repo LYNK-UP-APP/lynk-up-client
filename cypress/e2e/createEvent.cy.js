@@ -49,14 +49,17 @@ describe('Event Info', () => {
       cy.get("[placeholder='Group']").should('be.visible').should('have.attr', 'placeholder', 'Group')
     });
 
-    it.only('successfully creates an event', () => {
+    it('Successfully creates an event', () => {
+        cy.intercept('POST', 'https://lynk-up-server.onrender.com/events', {
+          statusCode: 200,
+        }).as('createEvent')
+
         cy.get('[placeholder="Event Name"]').type('Event Test');
         cy.get('.large-input').type('Event Description Test');
         cy.get('.short-input[type="date"]').type('2023-05-25');
         cy.get('.short-input[type="time"]').type('12:00');
         cy.get('[placeholder="Group"]').type('Group');
         cy.get('div > .long-input').type('123 fun st.')
-        cy.intercept('POST', 'https://lynk-up-server.onrender.com/events').as('createEvent');
         cy.get('button').contains('Create Event').click();
         cy.wait('@createEvent').then(({ response }) => {
           expect(response.statusCode).to.equal(200);
