@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUser('303-386-2891')
+    getUser(1)
     .then(data => {
       dispatch(updateUser(data.data.attributes));
       dispatch(updateEvents(data.data.events));
