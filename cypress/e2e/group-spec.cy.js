@@ -26,13 +26,13 @@ describe('Group Page', () => {
     });
 
     it('Should be able to post a new group', () => {
-        cy.get('[placeholder="Group Name"]').type("awesome fun group!")
-        cy.get('.form > :nth-child(4)').click()
+        cy.get('[placeholder="Group Name"]').type("awesome fun group!");
+        cy.get('.form > :nth-child(4)').click();
 
-        cy.postGroup()
-        cy.get('.submit').click()
+        cy.postGroup();
+        cy.get('.submit').click();
 
-        cy.get('.groupPage > :nth-child(1) > :nth-child(6)').contains('awesome fun group!').should('exist')
+        cy.get('.groupPage > :nth-child(1) > :nth-child(6)').contains('awesome fun group!').should('exist');
     });
   
   });
