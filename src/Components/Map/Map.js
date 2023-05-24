@@ -1,9 +1,9 @@
 import { useRef, useEffect } from "react";
 import "./Map.css";
 
-const AutoComplete = () => {
+const AutoComplete = ({inputRef}) => {
  const autoCompleteRef = useRef();
- const inputRef = useRef();
+//  const inputRef = useRef();
 
  useEffect(() => {
   const options = {
@@ -17,6 +17,9 @@ const AutoComplete = () => {
    options
   );
  }, []);
+
+
+
  return (
   <div>
    <input className="long-input" ref={inputRef}/>
