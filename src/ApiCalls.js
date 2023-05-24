@@ -1,5 +1,5 @@
-const getUser = phone => {
-  return fetch(`https://lynk-up-server.onrender.com/users/${phone}`)
+const getUser = (id) => {
+  return fetch(`https://lynk-up-server.onrender.com/users/${id}`)
     .then(res => {
       if (res.ok) {
         return res.json();

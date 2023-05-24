@@ -34,6 +34,8 @@ const GroupPage = () => {
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
 
+  console.log(friends)
+
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
