@@ -1,7 +1,7 @@
 describe('Dashboard', () => {
   beforeEach(() => {
     cy.login();
-    cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/888-888-8888', {
+    cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/1', {
       fixture: 'getUser.json'
     })
     cy.intercept('GET', 'https://lynk-up-server.onrender.com/events/1', {

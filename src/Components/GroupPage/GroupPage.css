@@ -24,17 +24,21 @@
 
 .short-input {
     width: 25vw;
-    height: 5vh;
-    text-align: center;
+    height: 3vh;
+    min-height: 30px;
     background-color: white;
 }
 
 .short-tile {
     width: 25vw;
-    height: 5vh;
+    height: 3vh;
+    min-height: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: white;
+    font-family: var(--secondary-font);
+    border-radius: 10px;
 }
 
 .selected {
@@ -45,6 +49,7 @@
 
 .half-card {
     height: var(--section-height);
+    min-height: 600px;
     width: var(--section-width) / 2;
     background-color: var(--secondary-color-black);
     border-radius: 20px;
@@ -70,6 +75,7 @@
     width: 35vw;
     min-height: var(--section-min-width);
     background-color: var(--secondary-color-white);
+    border-radius: 10px;
 }
 
 button {
@@ -81,4 +87,8 @@ button {
 
 button:hover {
     background-color: var(--secondary-color-blue);
+}
+
+.submit {
+    min-height: 40px;
 }
