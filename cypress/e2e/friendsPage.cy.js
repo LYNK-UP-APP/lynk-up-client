@@ -1,5 +1,7 @@
 describe('friends', () => {
     beforeEach('visit friends page', () => {
+        cy.login()
+        cy.intercept('GET', `https://lynk-up-server.onrender.com/1/friends`, { fixture: 'friends.json' });
         cy.visit('http://localhost:3000/friends')
 
     })
@@ -39,4 +41,13 @@ describe('friends', () => {
         .get('button').click()
         .get('.long-tile').contains('Jones')
     })
+    it.only('displays friends and adds a new friend', () => {
+        cy.get('.long-input').type('John');
+        cy.get('.long-tile').should('have.length', 1);
+        cy.get('.add-friends input').type('Jane');
+        cy.get('.add-friends button').click();
+        cy.addFriends()
+        cy.get('.long-tile').should('have.length', 2);
+        cy.contains('.long-tile', 'Jane').should('exist');
+      });
   })

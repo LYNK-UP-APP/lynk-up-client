@@ -17,7 +17,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUser('888-888-8888')
+    getUser('1')
     .then(data => {
       dispatch(updateUser(data.data.attributes));
       dispatch(updateEvents(data.data.events));
@@ -26,7 +26,7 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    getFriends(1)
+    getFriends('1')
       .then(data => {
         console.log('friends', data.data.friends);
       })
