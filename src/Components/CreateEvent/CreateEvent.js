@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './CreateEvent.css';
 import AutoComplete from '../Map/Map';
+import { postEvent } from '../../ApiCalls';
 
 function CreateEvent() {
   const [eventName, setEventName] = useState('Event Name');
@@ -11,40 +12,22 @@ function CreateEvent() {
   const inputRef = useRef()
 
   const handleSubmit = () => {
+
+    const address = document.querySelector('#address-input').value
+    console.log(address.value)
+
     const event = {
       eventName,
       eventDescription,
       date,
       time,
       group,
-      inputRef
+      inputRef,
+      address
     };
-    console.log("event", event)
-    fetch('https://lynk-up-server.onrender.com/events/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            "title": event.eventName,
-            "date": event.date,
-            "time": event.time,
-            "address": event.inputRef,
-            "group": event.group,
-            "description": event.eventDescription
-          }),
-      })
-        .then(response => {
-          if (response.ok) {
-            console.log('Event created successfully!');
-          } else {
-            console.error('Failed to create event');
-          }
-        })
-        .catch(error => {
-          console.error('Error creating event:', error);
-        })
-    }
+    postEvent(event);
+    
+  }
   return (
     <div>
       <section className='card'>
