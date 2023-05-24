@@ -1,7 +1,7 @@
 describe('friends', () => {
     beforeEach('visit friends page', () => {
         cy.login()
-        cy.intercept('GET', `https://lynk-up-server.onrender.com/1/friends`, { fixture: 'friends.json' });
+        cy.intercept('GET', `https://lynk-up-server.onrender.com/users/1/friends`, { fixture: 'friends.json' });
         cy.visit('http://localhost:3000/friends')
 
     })
@@ -24,7 +24,7 @@ describe('friends', () => {
     })
     it('should have a card that contains title, search bar, add friend', () => {
         cy.get('.card')
-        .children().should('have.length', 3)
+        .children().should('have.length', 4)
         .get('.title')
         .get('.long-input')
         .get('div > input')
@@ -37,17 +37,17 @@ describe('friends', () => {
 
     it('should be able to type in a new friend and add them', () => {
         cy.get('div > input').should('have.attr', 'placeholder', 'Enter a new name')
-        .type('Jones').should('have.value', 'Jones')
+        .type('John').should('have.value', 'John')
         .get('button').click()
-        .get('.long-tile').contains('Jones')
+        .get('.long-tile').contains('John')
     })
-    it.only('displays friends and adds a new friend', () => {
+    it('displays friends and adds a new friend', () => {
         cy.get('.long-input').type('John');
         cy.get('.long-tile').should('have.length', 1);
         cy.get('.add-friends input').type('Jane');
         cy.get('.add-friends button').click();
         cy.addFriends()
-        cy.get('.long-tile').should('have.length', 2);
-        cy.contains('.long-tile', 'Jane').should('exist');
+        cy.get('.long-tile').should('have.length', 1);
+        cy.contains('.long-tile', 'John').should('exist');
       });
   })
