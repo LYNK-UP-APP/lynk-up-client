@@ -1,17 +1,36 @@
 {
-    "groups": [
-        {
-            "id": 0,
-            "name": "Group?"
-        },
-        {
-            "id": 1,
-            "name": "Group 2?"
-        },
-        {
-            "id": 2,
-            "name": "Group 273?"
-        }
+    "data": [
+      {
+        "id": 1,
+        "name": "test buddies",
+        "updated": "2023-05-23T23:35:10.294701Z",
+        "created": "2023-05-23T23:35:10.294724Z",
+        "user": 1,
+        "friends": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 2,
+        "name": "fewfewg",
+        "updated": "2023-05-24T16:46:29.542505Z",
+        "created": "2023-05-24T16:46:29.542545Z",
+        "user": 1,
+        "friends": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Super cool fun times",
+        "updated": "2023-05-24T19:18:01.675727Z",
+        "created": "2023-05-24T19:18:01.675749Z",
+        "user": 4,
+        "friends": [
+          3
+        ]
+      }
     ]
-}
-  
+  }

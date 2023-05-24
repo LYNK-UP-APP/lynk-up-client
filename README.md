@@ -1,16 +1,18 @@
 # LYNK-UP
 
 ## Table of Contents
-  - [Introduction](#Introduction)
-  - [Technologies](#Technologies)
-  - [Contributors](#Contributors)
-  - [Illustrations](#Illustrations)
-  - [Deployed Page](#Deployed-Page)
-  - [Wins](#Wins)
-  - [Challenges & Improvements](#Challenges-&-Improvements)
-  - [Set Up](#Set-Up)
-  - [Sources](#Sources)
-  - [Project Spec](#Project-Spec)
+- [LYNK-UP](#lynk-up)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Technologies](#technologies)
+  - [Contributors](#contributors)
+  - [Illustrations](#illustrations)
+  - [Deployed Page](#deployed-page)
+  - [Wins](#wins)
+  - [Challenges \& Improvements](#challenges--improvements)
+  - [Set Up](#set-up)
+  - [Sources](#sources)
+  - [Project Specs](#project-specs)
 
 ## Introduction
 

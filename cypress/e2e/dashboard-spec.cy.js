@@ -2,7 +2,6 @@ describe('Dashboard', () => {
   beforeEach(() => {
     cy.login();
     cy.getEventOne();
-    cy.visit('http://localhost:3000/dashboard')
   });
 
   it('Should have a visible header', () => {

@@ -32,6 +32,7 @@ Cypress.Commands.add('login', () => {
   .visit('http://localhost:3000/');
 });
 
+
 Cypress.Commands.add('getEventOne', () => {
   cy.intercept('GET', 'https://lynk-up-server.onrender.com/events/1', {
     statusCode: 200,
@@ -45,7 +46,7 @@ Cypress.Commands.add('clickEventOne', () => {
 
 
 Cypress.Commands.add('getGroups', () => {
-  cy.intercept('GET', 'https://bab2f687-e74e-434e-933e-7c7884a0521d.mock.pstmn.io/api/v1/groups', {
+  cy.intercept('GET', 'https://lynk-up-server.onrender.com/groups/', {
     statusCode: 200,
     fixture: 'groups.json'
   })
@@ -61,4 +62,16 @@ Cypress.Commands.add('addFriends', () => {
       "user_name": "Jane",
     }
   })
+});
+Cypress.Commands.add('postGroup', () => {
+    cy.intercept('POST', 'https://lynk-up-server.onrender.com/groups/create', (req) => {
+      req.reply({
+        status: 200,
+        body: {
+          "name": "awesome fun group!",
+          "user": "1",
+          "friends": "[1]"
+      }
+      })
+    })
 });
