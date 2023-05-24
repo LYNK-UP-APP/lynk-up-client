@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './GroupPage.css';
 import { useDispatch } from 'react-redux';
-import { getGroups } from '../../ApiCalls';
-// import { getFriends } from '../../ApiCalls';
+import { getGroups, postGroups } from '../../ApiCalls';
+import { getFriends } from '../../ApiCalls';
 
 const dummyFriends = [
   { id: 1, name: 'Friend 1' },
@@ -13,24 +13,33 @@ const dummyFriends = [
 const GroupPage = () => {
 
   const [loading, setLoading] = useState(true);
+  const [loading2, setLoading2] = useState(true);
   const [groups, setGroups] = useState({});
+  const [friends, setFriends] = useState({});
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     getGroups()
     .then(data => {
-      console.log('group' + data)
-      setGroups(data);
+      console.log(data)
+      setGroups(data.data);
       setLoading(false);
+    });
+    getFriends()
+    .then(data => {
+      setFriends(data)
+      setLoading2(false)
     })
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
 
+  console.log(friends)
+
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFriends, setSelectedFriends] = useState([]);
-  console.log(groups)
+  const [selectedFriendsID, setSelectedFriendsID] = useState([]);
 
   const handleGroupNameChange = (event) => {
     setGroupName(event.target.value);
@@ -41,19 +50,25 @@ const GroupPage = () => {
   };
 
   const handleFriendSelection = (friend) => {
-    setSelectedFriends([...selectedFriends, friend]);
+    console.log(friend)
+    setSelectedFriends([...selectedFriends, friend[0]]);
+    setSelectedFriendsID([...selectedFriendsID, friend[1]]);
     setSearchTerm('');
   };
 
   const handleGroupSubmit = (event) => {
     event.preventDefault();
 
-    // const newGroup = {
-    //   groupName,
-    //   friends: selectedFriends
-    // };
+    const newGroup = {
+      name: groupName,
+      friends: selectedFriendsID,
+      user: 1
+    };
 
-    // setGroups([...groups, newGroup]);
+    console.log(newGroup)
+    postGroups(newGroup)
+
+    setGroups([...groups, newGroup]);
 
     setGroupName('');
     setSelectedFriends([]);
@@ -65,12 +80,11 @@ const GroupPage = () => {
   const loadingInfo = 
   <section>
     <h2 className='title'>Loading...</h2>
-  </section>
-  ;
+  </section>;
 
   return (
     <div className="groupPage">
-      {!loading ? 
+      {!loading && !loading2 ? 
       <>
       <div className="half-card">
         <div className="group-header">
@@ -83,7 +97,7 @@ const GroupPage = () => {
             onChange={handleGroupSearch}
           />
         {
-        groups.groups.map((group) => (
+        groups.map((group) => (
           <div className='short-tile' key={group.id}>{group.name}</div>
         ))
       }
@@ -116,7 +130,7 @@ const GroupPage = () => {
               friend.name.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .map((friend) => (
-              <div className='short-tile' key={friend.id} onClick={() => handleFriendSelection(friend.name)}>
+              <div className='short-tile' key={friend.id} onClick={() => handleFriendSelection([friend.name, friend.id])}>
                 {friend.name}
               </div>
             ))}
@@ -125,8 +139,7 @@ const GroupPage = () => {
             {selectedFriends.map((friend, index) => (
               <span className='short-tile' key={index}>{friend}</span>
             ))}
-
-          <button type="submit">Create Group</button>
+          <button className='submit' type="submit">Create Group</button>
         </form>
       </div>
       </>

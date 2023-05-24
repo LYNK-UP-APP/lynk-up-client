@@ -47,6 +47,29 @@ const getFriends = (user_id) => {
       .catch(err => console.log(err));
   }
 
+  const postGroups = (groupInfo) => {
+
+    fetch("https://lynk-up-server.onrender.com/groups/create/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "name": groupInfo.name,
+        "user": groupInfo.user,
+        "friends": groupInfo.friends
+      }),
+      })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .catch(err => console.log(err));
+}
+
 const postEvent = (event) => {
   fetch('https://lynk-up-server.onrender.com/events/', {
     method: 'POST',
@@ -73,5 +96,5 @@ const postEvent = (event) => {
 
   }
 
-export { getUser, getFriends, getEvent, getGroups, postEvent };
+export { getUser, getFriends, getEvent, getGroups, postEvent, postGroups };
 

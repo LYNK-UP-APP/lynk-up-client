@@ -15,7 +15,7 @@ const AutoComplete = ({inputRef}) => {
    inputRef.current,
    options
   );
- }, []);
+ }, [inputRef]);
 
 
 

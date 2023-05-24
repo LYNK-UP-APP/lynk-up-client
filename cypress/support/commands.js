@@ -62,3 +62,16 @@ Cypress.Commands.add('addFriends', () => {
     }
   })
 });
+
+Cypress.Commands.add('postGroup', () => {
+  cy.intercept('POST', 'https://lynk-up-server.onrender.com/groups/create', (req) => {
+    req.reply({
+      status: 200,
+      body: {
+        "name": "awesome fun group!",
+        "user": "1",
+        "friends": "[1]"
+    }
+    })
+  })
+});
