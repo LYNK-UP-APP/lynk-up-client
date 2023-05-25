@@ -37,7 +37,7 @@ Our web application boasts cross-device accessibility, enabling users to effortl
   - [Trevor Fitzgerald](https://github.com/trevorfitz0)
 
 ## Illustrations 
-![App]()  
+![App](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWZhZmQzOTYwNjliYmE2YTA1NTk4NTM4MWJhOTZhMDcxNzlkYmY5OSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/joy7677rCoavAmuP47/giphy.gif)  
 
 ## Deployed Page
 
