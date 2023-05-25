@@ -1,0 +1,8 @@
+{
+  "data": {
+    "friends": [
+      {"user_name": "Tesseract", "user_id": 2},
+      {"user_name": "Fudge", "user_id": 3}
+    ]
+  }
+}

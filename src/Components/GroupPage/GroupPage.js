@@ -21,6 +21,7 @@ const GroupPage = () => {
     });
     getFriends()
     .then(data => {
+      console.log(data)
       setFriends(data.data.friends)
       setLoading2(false)
     })

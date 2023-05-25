@@ -2,6 +2,7 @@ describe('Group Page', () => {
     beforeEach(() => {
       cy.login();
       cy.getGroups();
+      cy.getFriends();
       cy.get('[data-cy="dropdown"]').select('Groups');
     });
   
@@ -16,7 +17,7 @@ describe('Group Page', () => {
 
     it('Should be able to search and add friends', () => {
         cy.get('[placeholder="Search friends..."]')
-        .type('Friend 1');
+        .type('Fu');
 
         cy.get('.form > .short-tile').click();
     });
