@@ -19,7 +19,7 @@ const GroupPage = () => {
       setGroups(data.data);
       setLoading(false);
     });
-    getFriends()
+    getFriends(1)
     .then(data => {
       console.log(data)
       setFriends(data.data.friends)
