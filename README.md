@@ -1,16 +1,18 @@
 # LYNK-UP
 
 ## Table of Contents
-  - [Introduction](#Introduction)
-  - [Technologies](#Technologies)
-  - [Contributors](#Contributors)
-  - [Illustrations](#Illustrations)
-  - [Deployed Page](#Deployed-Page)
-  - [Wins](#Wins)
-  - [Challenges & Improvements](#Challenges-&-Improvements)
-  - [Set Up](#Set-Up)
-  - [Sources](#Sources)
-  - [Project Spec](#Project-Spec)
+- [LYNK-UP](#lynk-up)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Technologies](#technologies)
+  - [Contributors](#contributors)
+  - [Illustrations](#illustrations)
+  - [Deployed Page](#deployed-page)
+  - [Wins](#wins)
+  - [Challenges \& Improvements](#challenges--improvements)
+  - [Set Up](#set-up)
+  - [Sources](#sources)
+  - [Project Specs](#project-specs)
 
 ## Introduction
 
@@ -55,6 +57,7 @@ Visit our deployed [LYNK-UP Page]()
 
 ## Wins
 - Self-taught and implemented Redux throughout the project utilizing best practices.
+- Successfully integrated and utilized data from an unfamiliar API to enhance the app's functionality.
 - Efficiently created and followed user stories, ensuring features catered to our target audience.
 - Prioritized User Experience by focusing on intuitive routing with multiple ways to navigate back to the main page.
 - Collaboratively made decisions when troubleshooting bugs and navigating any course changes within the development process.

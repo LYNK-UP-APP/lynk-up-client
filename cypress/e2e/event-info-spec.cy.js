@@ -1,11 +1,6 @@
 describe('Event Info', () => {
   beforeEach(() => {
     cy.login();
-    cy.getEventOne();
-    cy.clickEventOne();
-    cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/888-888-8888', {
-      fixture: 'getUser.json'
-    })
     cy.intercept('GET', 'https://lynk-up-server.onrender.com/events/1', {
       fixture: 'event1.json'
     })

@@ -15,7 +15,7 @@ function FriendsPage() {
 
   
   useEffect(() => {
-    getFriends(user.id)
+    getFriends(1)
       .then(data => {
         dispatch(updateFriends(data.data.friends));
       })
@@ -45,11 +45,36 @@ function FriendsPage() {
     setSearch(event.target.value);
   };
 
-  const handleAddName = () => {
+  // const handleAddName = () => {
+  //   if (newFriendName !== '') {
+  //     const newFriend = { user_id: friends.length + 1, user_name: newFriendName };
+  //     setFilteredFriends([...filteredFriends, newFriend]);
+  //     setNewFriendName('');
+  //   }
+  // };
+  const handleAddName = (user_id) => {
+    const id = friends.length
     if (newFriendName !== '') {
       const newFriend = { user_id: friends.length + 1, user_name: newFriendName };
-      setFilteredFriends([...filteredFriends, newFriend]);
-      setNewFriendName('');
+      fetch(`/https://lynk-up-server.onrender.com/${user_id}/friends/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newFriend)
+      })
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error();
+          }
+        })
+        .then(data => {
+          setFilteredFriends([...filteredFriends, data.friend]);
+          setNewFriendName('');
+        })
+        .catch(err => console.log(`There has been an error: ${err}`));
     }
   };
 
