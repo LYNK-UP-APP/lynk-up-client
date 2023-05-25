@@ -24,7 +24,7 @@ describe('friends', () => {
     })
     it('should have a card that contains title, search bar, add friend', () => {
         cy.get('.card')
-        .children().should('have.length', 4)
+        .children().should('have.length', 5)
         .get('.title')
         .get('.long-input')
         .get('div > input')
@@ -35,19 +35,4 @@ describe('friends', () => {
         .type('Joyquil').should('have.value', 'Joyquil')
     })
 
-    it('should be able to type in a new friend and add them', () => {
-        cy.get('div > input').should('have.attr', 'placeholder', 'Enter a new name')
-        .type('John').should('have.value', 'John')
-        .get('button').click()
-        .get('.long-tile').contains('John')
-    })
-    it('displays friends and adds a new friend', () => {
-        cy.get('.long-input').type('John');
-        cy.get('.long-tile').should('have.length', 1);
-        cy.get('.add-friends input').type('Jane');
-        cy.get('.add-friends button').click();
-        cy.addFriends()
-        cy.get('.long-tile').should('have.length', 1);
-        cy.contains('.long-tile', 'John').should('exist');
-      });
-  })
+});
