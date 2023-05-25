@@ -41,7 +41,7 @@ Our web application boasts cross-device accessibility, enabling users to effortl
 
 ## Deployed Page
 
-Visit our deployed [LYNK-UP Page]()
+Visit our deployed [LYNK-UP Page](https://lynk-up-client.vercel.app/)
 
 ## Wins
 - Self-taught and implemented Redux throughout the project utilizing best practices.
