@@ -33,8 +33,8 @@ Our web application boasts cross-device accessibility, enabling users to effortl
 
 ## Contributors
   - [Gus Deribeaux](https://github.com/Gderibeaux)
-  - [Joe Fogiato]()
-  - [Trevor Fitzgerald]()
+  - [Joe Fogiato](https://github.com/jfogiato)
+  - [Trevor Fitzgerald](https://github.com/trevorfitz0)
 
 ## Illustrations 
 ![App]()  
