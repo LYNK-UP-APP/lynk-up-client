@@ -3,7 +3,7 @@ describe('Group Page', () => {
       cy.login();
       cy.getGroups();
       cy.getFriends();
-      cy.get('[data-cy="dropdown"]').select('Groups');
+      cy.visit('http://localhost:3000/groups');
     });
   
     it('Should have the correct url', () => {

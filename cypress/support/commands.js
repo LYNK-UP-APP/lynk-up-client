@@ -51,7 +51,7 @@ Cypress.Commands.add('postGroup', () => {
 });
 
 Cypress.Commands.add('getFriends', () => {
-  cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/1/friends', {
+  cy.intercept('GET', 'https://lynk-up-server.onrender.com/users/*/friends', {
     statusCode: 200,
     fixture: 'friends.json'
   });
