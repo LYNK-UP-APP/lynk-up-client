@@ -10,17 +10,6 @@
     overflow: auto;
 }
 
-.long-input {
-    width: 50vw;
-    height: 5vh;
-    text-align: center;
-    background-color: white;
-    position: sticky;
-    top: 10vh;
-    z-index: 2;
-    background-color: var(--secondary-color-black);
-}
-
 .stick {
     position: sticky;
     top: 0;

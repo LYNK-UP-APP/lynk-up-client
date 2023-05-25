@@ -23,8 +23,8 @@ function EventInfo({ id }) {
       <section className='info-section'>
         <section className='event-info-left'>
           <p data-cy='event-date-time'>{`${event.date} at ${event.time}`}</p>
-          <p data-cy='event-group'>Group name: {event.group?.name}</p>
-          <p data-cy='event-desc'>{event.details}</p>
+          <p data-cy='event-group'>Group name: {event.group_name}</p>
+          <p data-cy='event-desc'>{event.description}</p>
         </section>
         <section className='event-info-right'>
           <p data-cy='event-location'>{event.address}</p>
@@ -32,10 +32,10 @@ function EventInfo({ id }) {
             🗺️
           </div>
         </section>
-        <button className='go-home-button'>
-          <Link to='/dashboard'>Go Home</Link>
-        </button>
       </section>
+      <button className='back'>
+        <Link to='/dashboard'>Back</Link>
+      </button>
     </>
   ;
 

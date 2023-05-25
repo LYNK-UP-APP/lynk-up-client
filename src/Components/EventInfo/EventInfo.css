@@ -11,6 +11,7 @@
 
 .info-section {
   height: 95%;
+  width: 100%;
   display: flex;
 }
 
@@ -34,4 +35,8 @@
   width: 90%;
   align-items: center;
   font-size: 10em;
+}
+
+.back {
+  margin-bottom: 1vmin;
 }
