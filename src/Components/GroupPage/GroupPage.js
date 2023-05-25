@@ -4,37 +4,29 @@ import { useDispatch } from 'react-redux';
 import { getGroups, postGroups } from '../../ApiCalls';
 import { getFriends } from '../../ApiCalls';
 
-const dummyFriends = [
-  { id: 1, name: 'Friend 1' },
-  { id: 2, name: 'Friend 2' },
-  { id: 3, name: 'Friend 3' }
-];
-
 const GroupPage = () => {
 
   const [loading, setLoading] = useState(true);
   const [loading2, setLoading2] = useState(true);
-  const [groups, setGroups] = useState({});
-  const [friends, setFriends] = useState({});
+  const [groups, setGroups] = useState([]);
+  const [friends, setFriends] = useState([]);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     getGroups()
     .then(data => {
-      console.log(data)
       setGroups(data.data);
       setLoading(false);
     });
     getFriends()
     .then(data => {
-      setFriends(data)
+      console.log(data)
+      setFriends(data.data.friends)
       setLoading2(false)
     })
     .catch(err => console.log(`There has been an error: ${err}`))
   }, [dispatch]);
-
-  console.log(friends)
 
   const [groupName, setGroupName] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
@@ -65,7 +57,6 @@ const GroupPage = () => {
       user: 1
     };
 
-    console.log(newGroup)
     postGroups(newGroup)
 
     setGroups([...groups, newGroup]);
@@ -125,13 +116,13 @@ const GroupPage = () => {
             onChange={handleFriendSearch}
           />
           <p className='short-line-break'></p>
-          {dummyFriends
+          {friends
             .filter((friend) =>
-              friend.name.toLowerCase().includes(searchTerm.toLowerCase())
+              friend.user_name.toLowerCase().includes(searchTerm.toLowerCase())
             )
             .map((friend) => (
-              <div className='short-tile' key={friend.id} onClick={() => handleFriendSelection([friend.name, friend.id])}>
-                {friend.name}
+              <div className='short-tile' key={friend.id} onClick={() => handleFriendSelection([friend.user_name, friend.id])}>
+                {friend.user_name}
               </div>
             ))}
           <p className='short-line-break'></p>

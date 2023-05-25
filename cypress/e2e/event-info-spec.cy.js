@@ -38,8 +38,8 @@ describe('Event Info', () => {
   it('Should have a group name for the event', () => {
     cy.get("[data-cy='event-group']").should('be.visible').should('contain', 'Brunch');
   });
- it('Should have a go home button and take you back home', () => {
-  cy.get('.go-home-button').should('be.visible').click()
+ it('Should have a back button and take you back home', () => {
+  cy.get('.back').should('be.visible').click()
   cy.url().should('eq', 'http://localhost:3000/dashboard')
  })
 });

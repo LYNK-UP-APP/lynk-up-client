@@ -1,22 +1,23 @@
 describe('Group Page', () => {
-  beforeEach(() => {
-    cy.login();
-    cy.getGroups();
-    cy.get('[data-cy="dropdown"]').select('Groups');
-  });
-
-  it('Should have the correct url', () => {
-    cy.url().should('include', '/groups');
-  });
+    beforeEach(() => {
+      cy.login();
+      cy.getGroups();
+      cy.getFriends();
+      cy.visit('http://localhost:3000/groups');
+    });
+  
+    it('Should have the correct url', () => {
+      cy.url().should('include', '/groups');
+    });
 
   it('Should be able to enter group name', () => {
       cy.get('[placeholder="Group Name"]')
       .type('Cool Group');
   });
 
-  it('Should be able to search and add friends', () => {
-      cy.get('[placeholder="Search friends..."]')
-      .type('Friend 1');
+    it('Should be able to search and add friends', () => {
+        cy.get('[placeholder="Search friends..."]')
+        .type('Fu');
 
       cy.get('.form > .short-tile').click();
   });
