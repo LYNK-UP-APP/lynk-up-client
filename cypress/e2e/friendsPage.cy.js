@@ -22,17 +22,14 @@ describe('friends', () => {
         cy.get('.title')
         .contains('Friends')
     })
-    it('should have a card that contains title, search bar, add friend', () => {
+    it('should have a card that contains title, search bar', () => {
         cy.get('.card')
-        .children().should('have.length', 5)
+        .children().should('have.length', 4)
         .get('.title')
         .get('.long-input')
-        .get('div > input')
-        .get('button')
     })
     it('should have a long input that contains Search amd should be able to type in it', () => {
         cy.get('.long-input').should('have.attr', 'placeholder', 'Search')
         .type('Joyquil').should('have.value', 'Joyquil')
     })
-
 });
