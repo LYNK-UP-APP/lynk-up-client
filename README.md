@@ -30,26 +30,14 @@ Our web application boasts cross-device accessibility, enabling users to effortl
   - React
   - Router
   - Cypress
-  - Python
-  - Jango
 
 ## Contributors
   - [Gus Deribeaux](https://github.com/Gderibeaux)
   - [Joe Fogiato]()
   - [Trevor Fitzgerald]()
-  - [Andra Helton]()
-  - [Antonio Hunt]()
-  - [Dawson Timmons]()
-  - [Harrison Ryan]()
-  - [William Lampke]()
-
 
 ## Illustrations 
 ![App]()  
-
-Responsive Design for phone:
-
-![Phone View]() 
 
 ## Deployed Page
 
